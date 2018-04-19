@@ -1,0 +1,64 @@
+<import src="../components/star/index.wxml"/>
+<view class="container">
+    <view class="poster">
+        <image src="{{movie.poster}}" class="poster-image" mode="aspectFill"></image>
+        <view class="poster-content">
+            <view class="poster-content-title">{{movie.title}}</view>
+            <view class="poster-content-info">
+                <view class="poster-content-info-country">{{movie.countries}}</view>
+                <view class="poster-content-info-year">{{movie.year}}</view>
+            </view>
+            <view class="poster-content-count">
+                <view class="poster-content-count-like">
+                    <text class="poster-content-count-like-count">{{movie.collect_count}}</text>
+                    <text class="poster-content-count-like-text">人喜欢</text>
+                </view>
+                <view class="poster-content-count-comment">
+                    <text class="poster-content-count-comment-count">{{movie.collect_count}}</text>
+                    <text class="poster-content-count-comment-text">条评论</text>
+                </view>
+            </view>
+            <view class="poster-content-position" catchtap="viewPoster" data-src="{{movie.poster}}">
+                <image src="{{movie.poster}}" class="poster-content-position-image"></image>
+            </view>
+        </view>
+    </view>
+    <view class="movie-info">
+        <text class="movie-info-title">{{movie.original_title}}</text>
+        <view class="movie-info-num">
+            <text class="movie-info-num-title">评分</text>
+            <view class="movie-info-num-star">
+                <template is="star" data="{{star: movie.star}}"></template>
+            </view>
+            <text class="movie-info-num-average">{{movie.average}}</text>
+        </view>
+        <view class="movie-info-director">
+            <text class="movie-info-director-title">导演</text>
+            <text class="movie-info-director-name">{{movie.directors.name}}</text>
+        </view>
+        <view class="movie-info-actors">
+            <text class="movie-info-actors-title">影人</text>
+            <text class="movie-info-actors-name">{{movie.actors.name}}</text>
+        </view>
+        <view class="movie-info-type">
+            <text class="movie-info-type-title">类型</text>
+            <text class="movie-info-type-name">{{movie.type}}</text>
+        </view>
+    </view>
+    <view class="movie-summary">
+        <view class="movie-summary-title">剧情简介</view>
+        <view class="movie-summary-text">{{movie.summary}}</view>
+    </view>
+    <view class="actors-img">
+        <view class="actors-img-title">影人</view>
+        <scroll-view scroll-x="{{true}}" >
+            <view class="actors-img-container">
+                <view wx:for="{{movie.actors.imgs}}" wx:key="{{index}}" class="actors-img-item">
+                    <image src="{{item.src}}" class="actors-img-item-image">{{item.src}}</image>
+                    <text class="actors-img-item-name">{{item.name}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+

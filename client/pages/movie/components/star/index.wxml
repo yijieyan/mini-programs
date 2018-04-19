@@ -1,0 +1,14 @@
+<template name="star">
+    <view class="star-container">
+        <view wx:for="{{5}}" wx:for-index="starIndex" wx:key="{{starIndex}}" class="star-container-item">
+            <text class="iconfont icon-star star-active" wx:if="{{item < star}}"></text>
+            <text class="iconfont icon-star star-unactive" wx:else></text>
+        </view>
+    </view>
+</template>
+
+
+
+
+
+

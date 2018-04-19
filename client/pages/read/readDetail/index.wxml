@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="pic">
+        <image src="{{img}}" class="img"></image>
+        <view class="music">
+            <image  src="/images/music/music-start.png" class="music-start" wx:if="{{!isStart}}"  bindtap="audioPlay"></image>
+            <image  src="/images/music/music-stop.png"  class="music-stop" wx:else  bindtap="audioPause"></image>
+        </view>
+
+    </view>
+    <view class="content">
+        <view class="content-header">
+            <view class="content-header-title">
+                <image src="{{avatar}}" class="content-header-title-img"></image>
+                <text class="content-header-title-name">{{name}}</text>
+                <text class="content-header-title-text">发表于</text>
+                <text class="content-header-title-day">{{day}}天前</text>
+            </view>
+            <view class="content-header-body">
+                <text class="content-header-body-title">{{title}}</text>
+                <view class="content-header-body-border">
+                    <image class="content-header-body-border-image-one" src="{{collectionImg}}" wx:if="{{iscollected}}" bindtap="collected"></image>
+                    <image class="content-header-body-border-image-one" src="{{collectionNotImg}}" wx:else bindtap="collected"></image>
+                    <image class="content-header-body-border-image-two" src="{{shareImg}}" wx:if="{{isShared}}" bindtap="shared"></image>
+                    <image class="content-header-body-border-image-two" src="{{shareNotImg}}" wx:else  bindtap="shared"></image>
+                </view>
+            </view>
+        </view>
+        <view class="content-body">
+            <view class="content-body-header">
+                <text class="content-body-header-title">1 引言</text>
+            </view>
+            <view class="content-body-content">
+                {{content}}
+            </view>
+        </view>
+
+    </view>
+</view>

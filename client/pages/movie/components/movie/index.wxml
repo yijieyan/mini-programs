@@ -1,0 +1,13 @@
+<import src="../star/index.wxml"/>
+<template name="movie">
+    <view class="movie-container">
+        <view class="movie-container-item" wx:for="{{obj}}"  wx:for-item="titem" wx:key="{{titem.title}}" data-movieId="{{titem.movieId}}" catchtap="jumpDetail">
+            <image class="movie-container-item-image" src="{{titem.src}}"></image>
+            <text class="movie-container-item-title">{{titem.title}}</text>
+            <view class="movie-container-item-footer">
+                <template is="star" data="{{...titem.stars}}"></template>
+                <text class="movie-container-item-footer-commentNum">{{titem.average}}</text>
+            </view>
+        </view>
+    </view>
+</template>

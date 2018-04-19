@@ -1,0 +1,28 @@
+<import src="../components/movie/index.wxml"/>
+<view class="container">
+    <view class="container-search">
+        <icon type="search" size="16" color="#405f80" class="container-search-icon" />
+        <input  placeholder="请输入电影关键字" class="container-search-input" bindfocus="bindfocus" bindconfirm="bindconfirm" value="{{value}}"/>
+        <text class="iconfont icon-delete container-search-delete" bindtap="cancel" wx:if="{{isSearch}}"></text>
+    </view>
+    <view class="container-body" wx:if="{{!isSearch}}">
+        <view class="container-body-title" >
+            <text class="container-body-title-left">{{theater.name}}</text>
+            <text class="container-body-title-arrow icon-arrow iconfont"  catchtap="jumpMovieList" data-name="{{theater.name}}"></text>
+        </view>
+        <template is="movie" data="{{obj:theater.list}}"></template>
+        <view class="container-body-title">
+            <text class="container-body-title-left">{{coming_soon.name}}</text>
+            <text class="container-body-title-arrow icon-arrow iconfont" catchtap="jumpMovieList" data-name="{{coming_soon.name}}"></text>
+        </view>
+        <template is="movie" data="{{obj:coming_soon.list}}"></template>
+        <view class="container-body-title">
+            <text class="container-body-title-left">{{top250.name}}</text>
+            <text class="container-body-title-arrow icon-arrow iconfont" catchtap="jumpMovieList" data-name="{{top250.name}}"></text>
+        </view>
+        <template is="movie" data="{{obj:top250.list}}"></template>
+    </view >
+    <view class="search-list" wx:else>
+        <template is="movie" data="{{obj:searchList}}"></template>
+    </view>
+</view>

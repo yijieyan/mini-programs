@@ -1,0 +1,8 @@
+<view class="container">
+    <image src="/images/avatars/avatar.jpeg" class="avatar"></image>
+    <text class="text">Hello world</text>
+    <view class="btn" bindtap="jumpIndex">
+        <text class="btn-text">开启微信小程序</text>
+    </view>
+</view>
+

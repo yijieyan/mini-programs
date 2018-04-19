@@ -1,0 +1,32 @@
+Page {
+  background: #b4d4db;
+}
+Page .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+Page .container .avatar {
+  margin-top: 180rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+Page .container .text {
+  margin-top: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+Page .container .btn {
+  margin-top: 200rpx;
+  width: 250rpx;
+  height: 80rpx;
+  line-height: 79rpx;
+  border: 1rpx solid #405780;
+  border-radius: 5rpx;
+  text-align: center;
+}
+Page .container .btn .btn-text {
+  font-size: 24rpx;
+  color: #476686;
+}

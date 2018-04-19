@@ -1,0 +1,37 @@
+<view class="container">
+    <swiper indicator-dots="{{indicatorDots}}" class="swiper"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="item">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image swiper-image"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="content" wx:for="{{items}}" wx:key="item.text">
+        <view bindtap="jumpReadDetail" data-id="{{item.id}}">
+            <view class="header" >
+                <view class="header-title">
+                    <image src="{{item.avatar}}" class="header-title-avatar"></image>
+                    <text class="header-title-content">{{item.date}}</text>
+                </view>
+                <view class="header-content">{{item.text}}</view>
+            </view>
+            <image src="{{item.img}}" class="body"></image>
+            <view class="content-footer">
+                <view class="content-footer-one">
+                    <image src="/images/others/chat1.png" class="content-footer-one-image"></image>
+                    <text class="content-footer-one-num">{{item.num1}}</text>
+                </view>
+                <view class="content-footer-two">
+                    <image src="/images/others/view.png" class="content-footer-two-image"></image>
+                    <text class="content-footer-two-num">{{item.num2}}</text>
+                </view>
+                <view class="content-border-bottom">
+
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

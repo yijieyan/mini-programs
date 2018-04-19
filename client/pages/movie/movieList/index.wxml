@@ -1,0 +1,6 @@
+<import src="../components/movie/index.wxml"/>
+<view class="container">
+    <view>
+        <template is="movie" data="{{obj: movieList}}"></template>
+    </view>
+</view>
